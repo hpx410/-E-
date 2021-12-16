@@ -18,9 +18,9 @@ app = Flask(__name__)
 
 line_bot_api = LineBotApi('P8+j4lgIBQtMQSD/5NWoP/5xMR3cP9yoC4918nhmNOKapeGBTFGKY+hX3QCbr9wZBXdPziq9afQuGDwkNxHAc+8Gd1dbMHAsJt4YI8WV0NA+DhsiGKZ8vvGrQ2jRGutoCXZZ75NMXJVeDZfgHB2g+QdB04t89/1O/w1cDnyilFU=')
 
-handler = WebhookHandler('')
+handler = WebhookHandler('516b6ec2d914023733f3b975ccda03db')
 
-line_bot_api.push_message('', TextSendMessage(text='系統測試中，若您覺得訊息干擾到您，您可以將聊天室設為靜音，謝謝喔！'))
+line_bot_api.push_message('U74b5fe1a871389e841f9dc2e2a589d02', TextSendMessage(text='系統測試中，若您覺得訊息干擾到您，您可以將聊天室設為靜音，謝謝喔！'))
 
 @app.route("/callback", methods=['POST'])
 def callback():
@@ -54,7 +54,7 @@ def handle_message(event):
         #user_message='圖文訊息'
     if user_message.find('圖文訊息') != -1:    
         
-        res_message = TemplateSendMessage(
+        res_message = TemplateSendMessage('
             alt_text='圖文訊息',
             template = CarouselTemplate(
                 columns=[
